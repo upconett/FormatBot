@@ -4,13 +4,14 @@ from aiogram.filters import Command, StateFilter
 from aiogram.types import Message
 from aiogram.fsm.context import FSMContext
 
-from ege.filters import *
+from ege.filters import IndentFilter, IsOwner
 from ege.keyboards import default
 from ege.utils import formatAnswer, formatSectionList, showAhui, cheerUp, dontGiveUp
 from ege.fsm import SectionFSM
 import ege.database as db
 
 router = Router()
+router.message.filter(IsOwner())
 
 
 @router.message(Command('start'))

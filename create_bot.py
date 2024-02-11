@@ -7,3 +7,4 @@ if not os.path.isdir('files'):
 
 bot = Bot(token = TOKEN, parse_mode='HTML')
 dp = Dispatcher()
+ownerId = str(open('owner.txt').readline())

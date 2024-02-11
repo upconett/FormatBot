@@ -1,5 +1,6 @@
 from aiogram.filters import BaseFilter
 from aiogram.types import Message
+from create_bot import ownerId
 
 
 class IndentFilter(BaseFilter):
@@ -18,3 +19,8 @@ class IndentFilter(BaseFilter):
 		if len(lines) < 2:
 			return False
 		return True
+
+
+class IsOwner(BaseFilter):
+	async def __call__(self, message: Message):
+		return message.from_user.id == ownerId
