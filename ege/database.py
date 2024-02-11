@@ -1,5 +1,4 @@
-import json
-
+import json, time
 
 def writeData(data):
 	with open('files/ege.json', 'w') as file:
@@ -12,6 +11,7 @@ def getData():
 			return json.load(file)
 	except:
 		writeData({'currentSection': ''})
+		time.sleep(1)
 
 
 def getSection():
