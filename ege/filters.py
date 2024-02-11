@@ -23,5 +23,4 @@ class IndentFilter(BaseFilter):
 
 class IsOwner(BaseFilter):
 	async def __call__(self, message: Message):
-		print(ownerId, message.from_user.id)
 		return message.from_user.id == ownerId
